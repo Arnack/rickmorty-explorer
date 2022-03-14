@@ -31,7 +31,7 @@ export const CharacterCart: FC<IProps> = ({
     const [displayEpisodes, setDisplayEpisodes] = useState(false);
 
 
-    return <div className="col-sm-12 col-md-6 col-lg-4">
+    return <div className="col-sm-12 col-md-6">
         <div className={styles.cart}>
             <div className={styles.cartHeader}>
                 <img className={styles.image} src={image} alt={name}/>
@@ -40,7 +40,7 @@ export const CharacterCart: FC<IProps> = ({
             <div className={styles.cardBody}>
                 <table>
                     <tbody>
-                    <tr style={{cursor: 'pointer'}}
+                    <tr className={styles.expandable}
                         onClick={() => setDisplayOriginInfo(!displayOriginInfo)}>
                         <th>Origin</th>
                         <td>
@@ -50,7 +50,7 @@ export const CharacterCart: FC<IProps> = ({
                     {
                         displayOriginInfo && <LocationInfo url={origin.url}/>
                     }
-                    <tr style={{cursor: 'pointer'}}
+                    <tr className={styles.expandable}
                         onClick={() => setDisplayLocationInfo(!displayLocationInfo)}>
                         <th>Location</th>
                         <td>
@@ -73,7 +73,7 @@ export const CharacterCart: FC<IProps> = ({
                         <th>Gender</th>
                         <td>{gender}</td>
                     </tr>
-                    <tr style={{cursor: 'pointer'}}
+                    <tr className={styles.expandable}
                         onClick={() => setDisplayEpisodes(!displayEpisodes)}>
                         <th>Chapters</th>
                         <td>
