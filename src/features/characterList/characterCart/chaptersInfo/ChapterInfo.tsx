@@ -9,11 +9,13 @@ interface IProps {
 }
 
 /**
+ * Component to display chapter list
+ * @param urls - array of URLs
  */
-export const ChapterInfo: FC<IProps> = ({urls}) => {
-    const ids = urls.map((url) => {
-        return url.split('/')[5];
-    }).join(',');
+export const ChapterInfo: FC<IProps> = ({ urls}) => {
+    // getting episode ids as a string
+    // ex 1,2,18
+    const ids = urls.map((url) => url.split('/')[5]).join(',');
 
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState<IEpisode[]>([]);
@@ -22,7 +24,6 @@ export const ChapterInfo: FC<IProps> = ({urls}) => {
         setIsLoading(true);
         axios.get(`https://rickandmortyapi.com/api/episode/${ids}`)
             .then((res) => {
-                console.log(res.data);
                 setData(res?.data || []);
             })
             .catch((err) => console.error(err))

@@ -9,6 +9,8 @@ interface IProps {
 }
 
 /**
+ * Component to display Location/Origin info
+ * @param url - url to fetch info about loacation
  */
 export const LocationInfo: FC<IProps> = ({ url}) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -38,7 +40,7 @@ export const LocationInfo: FC<IProps> = ({ url}) => {
     if (isLoading || !data) {
         return <tr className={styles.lightRow}>
             <th>Loading...</th>
-            <td><Loader size={12} /></td>
+            <td><Loader size={20} /></td>
         </tr>
     }
 

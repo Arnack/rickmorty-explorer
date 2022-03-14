@@ -15,7 +15,6 @@ export const CharacterList: FC = () => {
         setLoading(true);
         axios.get(`https://rickandmortyapi.com/api/character/?page=${page}`)
             .then((res) => {
-                console.log('---', res.data.results[0]);
                 setPages(res.data.info.pages);
                 setCharacters(res.data.results);
             })
@@ -32,14 +31,14 @@ export const CharacterList: FC = () => {
     }
 
     return <>
+        <Pagination page={currentPage}
+                    setPage={setCurrentPage}
+                    pages={pages}/>
         <div className="row">
-            <Pagination page={currentPage}
-                        setPage={setCurrentPage}
-                        pages={pages} />
             {
                 characters.map((char: ICharacter, idx) =>
                     (<CharacterCart name={char.name}
-                                    key={char.name+idx+char.species}
+                                    key={char.name + idx + char.species}
                                     species={char.species}
                                     gender={char.gender}
                                     status={char.status}
@@ -51,6 +50,6 @@ export const CharacterList: FC = () => {
         </div>
         <Pagination page={currentPage}
                     setPage={setCurrentPage}
-                    pages={pages} />
+                    pages={pages}/>
     </>
 }

@@ -1,52 +1,11 @@
 .header {
-  height: 60px;
+  height: 120px;
   margin: 0;
-  //background-color: #55423d;
   background-color: #16161a;
-  //color: #f9f4ef;
   color: #2cb67d;
   padding: 4px 16px;
 
   h1 {
-    line-height: 52px;
-  }
-}
-
-
-.logo {
-  float: left;
-
-  h1 {
-    margin: 0 8px;
-  }
-}
-
-.navigation {
-  padding-right: 160px;
-
-  a {
-    margin: 16px;
-    font-size: 20px;
-    line-height: 52px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #f9f4ef;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-      color: #f9f4ef;
-    }
-  }
-}
-
-@media screen and (max-width: 570px) {
-  .navigation {
-    padding-right: 12px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .header {
-    height: 120px;
+    line-height: 112px;
   }
 }

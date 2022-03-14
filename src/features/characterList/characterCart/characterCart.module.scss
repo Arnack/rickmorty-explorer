@@ -32,6 +32,17 @@
   }
 }
 
+.expandLnk {
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: small;
+  color: #94a1b2;
+
+  &:hover{
+    color: #94a1b2;
+  }
+}
+
 .image {
   max-width: 100%;
   max-height: 180px;

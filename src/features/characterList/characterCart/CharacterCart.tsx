@@ -15,8 +15,6 @@ interface IProps {
     episode: string[];
 }
 
-/**
- */
 export const CharacterCart: FC<IProps> = ({
                                               name,
                                               image,
@@ -27,7 +25,6 @@ export const CharacterCart: FC<IProps> = ({
                                               gender,
                                               episode
                                           }) => {
-
 
     const [displayLocationInfo, setDisplayLocationInfo] = useState(false);
     const [displayOriginInfo, setDisplayOriginInfo] = useState(false);
@@ -46,7 +43,9 @@ export const CharacterCart: FC<IProps> = ({
                     <tr style={{cursor: 'pointer'}}
                         onClick={() => setDisplayOriginInfo(!displayOriginInfo)}>
                         <th>Origin</th>
-                        <td>{origin.name} {displayOriginInfo ? '-' : '+'}</td>
+                        <td>
+                            {origin.name} <a className={styles.expandLnk}>{displayOriginInfo ? 'hide' : 'expand'}</a>
+                        </td>
                     </tr>
                     {
                         displayOriginInfo && <LocationInfo url={origin.url}/>
@@ -54,7 +53,10 @@ export const CharacterCart: FC<IProps> = ({
                     <tr style={{cursor: 'pointer'}}
                         onClick={() => setDisplayLocationInfo(!displayLocationInfo)}>
                         <th>Location</th>
-                        <td>{location.name} {displayLocationInfo ? '-' : '+'}</td>
+                        <td>
+                            {location.name} <a
+                            className={styles.expandLnk}>{displayLocationInfo ? 'hide' : 'expand'}</a>
+                        </td>
                     </tr>
                     {
                         displayLocationInfo && <LocationInfo url={location.url}/>
@@ -74,10 +76,12 @@ export const CharacterCart: FC<IProps> = ({
                     <tr style={{cursor: 'pointer'}}
                         onClick={() => setDisplayEpisodes(!displayEpisodes)}>
                         <th>Chapters</th>
-                        <td>{episode.length} {displayEpisodes ? '-' : '+'}</td>
+                        <td>
+                            {episode.length} <a className={styles.expandLnk}>{displayEpisodes ? 'hide' : 'expand'}</a>
+                        </td>
                     </tr>
                     {
-                        displayEpisodes && <ChapterInfo urls={episode} />
+                        displayEpisodes && <ChapterInfo urls={episode}/>
                     }
                     </tbody>
                 </table>

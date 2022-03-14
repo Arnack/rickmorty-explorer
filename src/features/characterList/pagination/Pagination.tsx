@@ -7,13 +7,12 @@ interface IProps {
     setPage: (newPage: number) => void;
 }
 
-
-export const Pagination: FC<IProps> = ({ page, pages, setPage }) => {
+export const Pagination: FC<IProps> = ({page, pages, setPage}) => {
     let renderedFirstDots = false;
     let renderedSecondDots = false;
 
     const renderPageBtn = (idx: number, page: number, pages: number) => {
-        if (idx === page ) {
+        if (idx === page) {
             return <li key={`pageNum${idx + 1}`} className="page-item disabled">
                 <a className="page-link">{idx}</a>
             </li>
@@ -21,7 +20,9 @@ export const Pagination: FC<IProps> = ({ page, pages, setPage }) => {
 
         if (idx <= 3 || pages - idx < 3 || Math.abs(page - idx) < 3) {
             return <li key={`pageNum${idx + 1}`} className={"page-item"}
-                       onClick={() => {setPage(idx)}}
+                       onClick={() => {
+                           setPage(idx)
+                       }}
             >
                 <a className="page-link">{idx}</a>
             </li>
@@ -47,7 +48,9 @@ export const Pagination: FC<IProps> = ({ page, pages, setPage }) => {
         <nav>
             <ul className="pagination justify-content-center">
                 <li className={`page-item ${page === 1 ? 'disabled' : ''}`}
-                    onClick={() => {setPage(1)}}
+                    onClick={() => {
+                        setPage(1)
+                    }}
                 >
                     <a className="page-link">First</a>
                 </li>
@@ -56,10 +59,12 @@ export const Pagination: FC<IProps> = ({ page, pages, setPage }) => {
                 }
                 <li className={`page-item ${page === pages ? 'disabled' : ''}`}>
                     <a className="page-link"
-                       onClick={() => {setPage(pages)}}
+                       onClick={() => {
+                           setPage(pages)
+                       }}
                     >Last</a>
                 </li>
             </ul>
         </nav>
-        </>
+    </>
 }
