@@ -1,8 +1,10 @@
 .header {
   height: 60px;
   margin: 0;
-  background-color: #55423d;
-  color: #f9f4ef;
+  //background-color: #55423d;
+  background-color: #16161a;
+  //color: #f9f4ef;
+  color: #2cb67d;
   padding: 4px 16px;
 
   h1 {
@@ -13,6 +15,10 @@
 
 .logo {
   float: left;
+
+  h1 {
+    margin: 0 8px;
+  }
 }
 
 .navigation {

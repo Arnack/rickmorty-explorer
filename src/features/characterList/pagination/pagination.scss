@@ -1,0 +1,29 @@
+
+
+
+a.page-link {
+  background-color: #16161a;
+  cursor: pointer;
+  color: #94a1b2;
+  border-color: #35383d;
+
+  &.borderless {
+    background-color: transparent;
+  }
+
+  &:hover {
+    background-color: #242629;
+    border-color: #3f4349;
+    color: #2cb67d;
+  }
+}
+
+.page-item.disabled {
+  cursor: not-allowed;
+}
+
+.page-item.disabled a.page-link {
+  background-color: #242629;
+  color: #94a1b2;
+  border-color: #35383d
+}
